@@ -31,3 +31,7 @@ def delete(request, todo_id):
     todo = todo_model.objects.get(id=todo_id)
     todo.delete()
     return redirect('index')
+
+def history(request):
+    todos = todo_model.objects.all()
+    return render(request, 'todolist/history.html', {'todo_list': todos, 'title': 'ИСтория'})
