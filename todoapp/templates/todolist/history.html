@@ -1,16 +1,16 @@
 {% extends 'todolist/layout.html' %}
 
 {% block content %}
-
-{% for todo in todo_list %}
-
-    {% if todo.is_complete == True %}
 <div style="margin-top: 50px;" class="ui container">
 <h1 class="ui center aligned header">История задач
     </h1>
     <div style="text-align: center">
     <a href="/todo" class="ui teal basic button">На Главную</a>
     </div>
+{% for todo in todo_list %}
+
+    {% if todo.is_complete == True %}
+
 <div class="ui segment">
         <p class="ui big header">№{{ todo.id }} {{ todo.title }}</p>
         <span class="ui green label">Завершено</span>
